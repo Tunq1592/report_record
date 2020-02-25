@@ -10,7 +10,7 @@ def cur_datetime_ops(): # Lấy date curent -1
 	cursor = con.cursor()
 	client = paramiko.SSHClient()
 	client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-	client.connect('192.168.1.16', username= 'tu.nguyen', password = 'Pc057e1tc@151192')
+	client.connect('your IP', username= 'yourusername', password = 'yourpassword')
 	stdin, stdout, stderr = client.exec_command ('''date -d '1 day ago' +%Y-%m-%d''')
 	for i in stdout:
 		cur_date = i.strip('\n')
@@ -81,7 +81,7 @@ def Check_record_genesys(path, datetimes):
 	cursor = con.cursor()
 	client = paramiko.SSHClient()
 	client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-	client.connect('192.168.1.16', username= 'tu.nguyen', password = 'Pc057e1tc@151192')
+	client.connect('your ip ', username= 'your username', password = 'your password')
 	stdin_amount_file_genesys, stdout_amount_file_genesys, stderr_amount_file_genesys = client.exec_command('''ls %s -l|wc -l''' %(path))
 	for amount_file_genesys in stdout_amount_file_genesys:
 		_execute = '''UPDATE report_genesys SET record_amount_genesys = %d WHERE datetime = '%s' '''%(int(amount_file_genesys.strip('\n')) - 1, datetimes)
@@ -122,7 +122,7 @@ def scan_foldermonth_genesys(path):
 	cursor = con.cursor()
 	client = paramiko.SSHClient()
 	client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-	client.connect('192.168.1.16', username= 'tu.nguyen', password = 'Pc057e1tc@151192')
+	client.connect('your ip ', username= 'your username', password = 'your password')
 	stdin_folder_genesys, stdout_folder_genesys, stderr_folder_genesys = client.exec_command('''ls %s'''%(path))
 	for date in stdout_folder_genesys:
 		_execute = '''INSERT INTO report_genesys(datetime) VALUES ('%s')'''%(date.strip('\n'))
@@ -136,7 +136,7 @@ def scan_foldermonth_pbx(path):
 	cursor = con.cursor()
 	client = paramiko.SSHClient()
 	client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-	client.connect('192.168.1.16', username= 'tu.nguyen', password = 'Pc057e1tc@151192')
+	client.connect('your ip ', username= 'your username', password = 'your password')
 	stdin_folder_pbx, stdout_folder_pbx, stderr_folder_pbx = client.exec_command('''ls %s'''%(path))
 	for date in stdout_folder_pbx:
 		datetimes = '-'.join((path + date).split('/')[4:7]).strip('\n')
