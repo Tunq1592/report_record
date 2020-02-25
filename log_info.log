@@ -1,0 +1,16 @@
+rsync_Genysis_20191119.log-2019/11/19 22:30:03 [21736] building file list
+
+-2019/11/19 22:30:03 [21736] cd+++++++++ 2019-11-19/
+
+-2019/11/19 22:58:12 [21736] sent 6.55G bytes  received 570.69K bytes  3.87M bytes/sec
+
+-2019/11/19 22:58:12 [21736] total size is 11.44G  speedup is 1.75
+
+-2019/11/19 21:30:08 [17878] building file list
+
+-2019/11/19 21:30:11 [17878] cd+++++++++ 2019-11-19/
+
+-2019/11/19 21:58:34 [17878] sent 6.55G bytes  received 570.69K bytes  3.82M bytes/sec
+
+-2019/11/19 21:58:34 [17878] total size is 11.44G  speedup is 1.75
+

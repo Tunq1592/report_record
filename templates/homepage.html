@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Service Dept</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <style>
+            body{
+                
+                background-clip: border-box;
+                background-color: rgb(213, 226, 231);
+            }
+            * {
+                    box-sizing: border-box;
+            }
+            .form-total{
+            position: absolute;
+            border: 5px groove gray;
+            padding: 5px;
+            right: 20%;
+            left: 20%;
+            }
+            #submit{
+                text-align: center;
+            }
+            input{
+                    width: 30%;
+                    padding: 5px 5px;
+                    margin:0px 40%;
+                    border: 2px groove; 
+            }
+             select{
+                 width: 30%;
+                 padding: 5px 5px;
+                 border: 2px groove;
+                 margin:0px 40%;
+             }
+             label{
+                 font-size: 20px;
+             }
+        </style>
+        <h1 style="text-align: center">Services IT</h1>       
+    </head>
+    <body>
+        <form action = "http://192.168.1.75:8000/" method = "POST" class="form-style">
+            <br>
+            <div class="form-total">
+            <br>
+            <label><b>Your New Password: </b></label>
+            <input type="text" name = 'Password' value= "{{ passwords }}" />
+            <br>
+            <br>
+            <label><b>Password Length:</b></label>
+                <select name="Password Length" required>
+                    <option>8</option>
+                    <option>12 </option>
+                    <option>16 </option>
+                </select>
+            <br>
+            <br>
+            <div id="submit">
+                <input  type = "submit" value = 'Generate Random Password'/>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
