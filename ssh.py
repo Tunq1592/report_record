@@ -26,7 +26,7 @@ def Check_record_pbx(path, datetimes):
 	cursor = con.cursor()
 	client = paramiko.SSHClient()
 	client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-	client.connect('192.168.1.16', username= 'tu.nguyen', password = 'Pc057e1tc@151192')
+	client.connect('host ip', username= 'my account', password = 'your password')
 	stdin_amount_file_pbx, stdout_amount_file_pbx, stderr_amount_file_pbx = client.exec_command('''ls %s -l|wc -l''' %(path))
 	for amount_file_pbx in stdout_amount_file_pbx:
 		cursor.execute(
